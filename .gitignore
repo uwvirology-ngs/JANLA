@@ -1,0 +1,4 @@
+work/*
+example_output/*
+.nextflow*
+.nextflow/*
