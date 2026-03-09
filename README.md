@@ -21,7 +21,20 @@ Install [`Docker`](https://docs.docker.com/engine/installation/)
 
 ## Usage
 
-### Run nf_vivras locally with Docker:
+### Run GitHub version with Docker:
+```bash
+nextflow run uwvirology-ngs/nf_refvar -r main -latest \
+    --input example_samplesheet.csv \
+    --output example_output \
+    --ref $(pwd)/assets/NC_045512.fa \
+    --ref_index $(pwd)/assets/NC_045512.fa.fai \
+    --gff $(pwd)/assets/NC_045512.gff \
+    --genomic_region "NC_045512.2:21563-25384" \
+    --genomic_region_len 3822 \
+    -profile docker
+```
+
+### Run locally with Docker:
 ```bash
 nextflow run main.nf \
     --input example_samplesheet.csv \
@@ -33,6 +46,7 @@ nextflow run main.nf \
     --genomic_region_len 3822 \
     -profile docker
 ```
+
 ## Options 
 
 ### Required Parameters
